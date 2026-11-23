@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky Data Hub — Training Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .demo {
+      background: #fff3cd;
+      color: #664d03;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: 0;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Sky Data Hub</h1>
+  <p>Data Bundle Training Demo</p>
+</header>
+
+<div class="demo">
+  TRAINING DEMO — NO REAL PAYMENT OR TRANSACTION
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Choose a Demo Bundle</h2>
+
+    <p>1GB — GHS 5</p>
+    <button onclick="simulatePayment('1GB', 5)">
+      Select 1GB
+    </button>
+
+    <hr>
+
+    <p>3GB — GHS 12</p>
+    <button onclick="simulatePayment('3GB', 12)">
+      Select 3GB
+    </button>
+
+    <hr>
+
+    <p>5GB — GHS 18</p>
+    <button onclick="simulatePayment('5GB', 18)">
+      Select 5GB
+    </button>
+  </div>
+
+  <div class="card" id="result">
+    <h2>Demo Checkout</h2>
+    <p>Select a bundle above to simulate checkout.</p>
+  </div>
+
+</div>
+
+<script>
+function simulatePayment(bundle, price) {
+  document.getElementById("result").innerHTML = `
+    <h2>Demo Checkout</h2>
+    <p><strong>Bundle:</strong> ${bundle}</p>
+    <p><strong>Demo Price:</strong> GHS ${price}</p>
+
+    <button onclick="completeDemo()">
+      Simulate Payment
+    </button>
+  `;
+}
+
+function completeDemo() {
+  document.getElementById("result").innerHTML = `
+    <h2>Demo Payment Successful</h2>
+    <p>This was a simulated transaction for training purposes.</p>
+    <p><strong>No money was charged.</strong></p>
+  `;
+}
+</script>
+
+</body>
+  </html>
